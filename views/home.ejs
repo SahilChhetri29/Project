@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+</head>
+<body>
+    <form action="/getEmployee" method="post">
+        <input type="text" name="id" placeholder="Enter Employee ID">
+        <button type="submit">Submit</button>
+    </form><br>
+    <form>
+    <button type="submit" method="post" formaction="/allEmployee">GET All EMPLOYEES</button>
+    <button type="submit" method="post" formaction="/addEmployee">ADD AN EMPLOYEE</button>
+</form>
+</body>
+</html>

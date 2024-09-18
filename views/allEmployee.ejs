@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+</head>
+<body>
+   
+    <table border="1px"> 
+        <tr>
+            <th> Employee ID</th>
+            <th> Employee Name</th>
+            <th> Employee Department</th>
+            <th> Employee Salary</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        <% for(let emp of employees){ %>
+        <tr>
+            <td><%= emp.id %></td>
+            <td><%= emp.name %></td>
+            <td><%= emp.department %></td>
+            <td><%= emp.salary %></td>
+            <td><form method="post" action="/deleteEmployee/<%= emp.id %>"><button type="submit">Delete</button></form></td>
+            <td>
+                <form method="get" action="/updateEmployee">
+                <button type="submit">Update</button>
+                <input type="hidden" name="id" value="<%= emp.id %>">
+                <input type="hidden" name="edit" value="true">
+                </form>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+    <a href="/home">Home</a>
+   
+</body>
+</html>

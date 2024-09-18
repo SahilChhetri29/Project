@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+</head>
+<body>
+    <form action="<% if(edit){ %> /updateEmployee <% } else { %> /addEmployee <% } %>" method="post">
+        <div><input type="text" name="id" placeholder="Enter Id" value="<%= emp.id %>"></div>
+        <div><input type="text" name="name" placeholder="Enter Name" value="<%= emp.name %>"></div>
+        <div><input type="text" name="department" placeholder="Enter Department" value="<%= emp.department %>"></div>
+        <div><input type="number" name="salary" placeholder="Enter Salary" value="<%= emp.salary %>"></div>
+        <button type="submit"><% if(edit){%>Edit<% } else { %>Submit<% } %></button>
+        <% if(edit){ %><input type="hidden" name="oldId" value="<%= emp.id %>"><% } %>
+    </form>
+</body>
+</html>
